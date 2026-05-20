@@ -1,0 +1,495 @@
+:root{
+--vino:#5E0B15;
+--vino-dark:#2d040a;
+--gold:#D4AF37;
+--cream:#faf6f3;
+--white:#ffffff;
+--shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:var(--cream);
+color:#222;
+}
+
+/* LOADER */
+
+.loader{
+position:fixed;
+inset:0;
+background:var(--vino-dark);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:fadeOut 2.5s forwards;
+}
+
+.loader h1{
+color:var(--gold);
+font-family:'Playfair Display';
+font-size:4rem;
+letter-spacing:4px;
+}
+
+@keyframes fadeOut{
+0%,80%{opacity:1;}
+100%{
+opacity:0;
+visibility:hidden;
+}
+}
+
+/* NAV */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+backdrop-filter:blur(15px);
+background:rgba(45,4,10,.85);
+padding:22px 80px;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:2rem;
+color:var(--gold);
+font-family:'Playfair Display';
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+gap:35px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-weight:300;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:var(--gold);
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=1600&q=80");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.58);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+text-align:center;
+color:white;
+max-width:900px;
+padding:20px;
+animation:up 1.2s ease;
+}
+
+@keyframes up{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.hero-content span{
+color:var(--gold);
+letter-spacing:4px;
+text-transform:uppercase;
+}
+
+.hero-content h2{
+font-family:'Playfair Display';
+font-size:5rem;
+margin:20px 0;
+}
+
+.hero-content p{
+font-size:1.3rem;
+max-width:700px;
+margin:auto;
+margin-bottom:40px;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn-primary,
+.btn-secondary{
+padding:18px 38px;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.btn-primary{
+background:var(--gold);
+color:var(--vino);
+}
+
+.btn-secondary{
+border:2px solid white;
+color:white;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover{
+transform:scale(1.08);
+}
+
+/* STATS */
+
+.stats{
+padding:80px 20px;
+display:flex;
+justify-content:center;
+gap:80px;
+background:white;
+text-align:center;
+}
+
+.stats h3{
+font-size:3rem;
+color:var(--vino);
+font-family:'Playfair Display';
+}
+
+/* COLLECTION */
+
+.collection{
+padding:120px 60px;
+text-align:center;
+}
+
+.collection h2{
+font-size:3.5rem;
+font-family:'Playfair Display';
+color:var(--vino);
+margin-bottom:60px;
+}
+
+.cards{
+display:flex;
+justify-content:center;
+gap:35px;
+flex-wrap:wrap;
+}
+
+.card{
+width:340px;
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:var(--shadow);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-15px);
+}
+
+.card img{
+width:100%;
+height:380px;
+object-fit:cover;
+}
+
+.card-info{
+padding:30px;
+}
+
+.card h3{
+font-family:'Playfair Display';
+font-size:2rem;
+color:var(--vino);
+}
+
+.card p{
+margin:15px 0;
+color:#666;
+}
+
+.card span{
+display:block;
+font-size:1.3rem;
+color:var(--gold);
+font-weight:600;
+margin-bottom:20px;
+}
+
+.card button{
+width:100%;
+padding:15px;
+border:none;
+background:var(--vino);
+color:white;
+border-radius:10px;
+cursor:pointer;
+}
+
+/* BEST */
+
+.best{
+padding:120px 80px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:60px;
+background:white;
+flex-wrap:wrap;
+}
+
+.best img{
+width:450px;
+border-radius:20px;
+box-shadow:var(--shadow);
+}
+
+.best-text{
+max-width:500px;
+}
+
+.best-text span{
+color:var(--gold);
+letter-spacing:3px;
+}
+
+.best-text h2{
+font-size:4rem;
+font-family:'Playfair Display';
+color:var(--vino);
+margin:20px 0;
+}
+
+/* ABOUT */
+
+.about{
+padding:130px 30px;
+background:linear-gradient(rgba(94,11,21,.95),rgba(45,4,10,.95));
+text-align:center;
+color:white;
+}
+
+.about h2{
+font-size:3.5rem;
+color:var(--gold);
+font-family:'Playfair Display';
+margin-bottom:30px;
+}
+
+.about p{
+max-width:850px;
+margin:auto;
+font-size:1.2rem;
+line-height:1.8;
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+padding:120px 40px;
+text-align:center;
+}
+
+.testimonials h2{
+font-size:3rem;
+font-family:'Playfair Display';
+color:var(--vino);
+margin-bottom:60px;
+}
+
+.testimonial-grid{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.testimonial{
+width:320px;
+padding:40px;
+background:white;
+border-radius:20px;
+box-shadow:var(--shadow);
+}
+
+/* NEWSLETTER */
+
+.newsletter{
+padding:100px 20px;
+background:var(--vino);
+color:white;
+text-align:center;
+}
+
+.newsletter h2{
+font-size:3rem;
+color:var(--gold);
+font-family:'Playfair Display';
+}
+
+.newsletter form{
+margin-top:35px;
+}
+
+.newsletter input{
+padding:18px;
+width:320px;
+border:none;
+border-radius:40px;
+margin-right:10px;
+}
+
+.newsletter button{
+padding:18px 35px;
+border:none;
+border-radius:40px;
+background:var(--gold);
+font-weight:600;
+cursor:pointer;
+}
+
+/* CONTACT */
+
+.contact{
+padding:120px 20px;
+text-align:center;
+}
+
+.contact h2{
+font-size:3rem;
+color:var(--vino);
+font-family:'Playfair Display';
+margin-bottom:40px;
+}
+
+.contact-form{
+max-width:700px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:20px;
+border:1px solid #ddd;
+border-radius:12px;
+font-size:1rem;
+}
+
+.contact-form textarea{
+height:180px;
+}
+
+.contact-form button{
+padding:20px;
+background:var(--vino);
+color:white;
+border:none;
+border-radius:12px;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+background:var(--vino-dark);
+color:white;
+text-align:center;
+padding:50px;
+}
+
+footer h3{
+font-family:'Playfair Display';
+color:var(--gold);
+font-size:2.2rem;
+margin-bottom:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+padding:20px;
+}
+
+.navbar{
+flex-direction:column;
+gap:20px;
+}
+
+.nav-links{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-content h2{
+font-size:2.8rem;
+}
+
+.stats{
+flex-direction:column;
+gap:40px;
+}
+
+.collection h2,
+.about h2,
+.contact h2,
+.newsletter h2{
+font-size:2.2rem;
+}
+
+.newsletter input{
+width:100%;
+margin-bottom:15px;
+}
+
+.best img{
+width:100%;
+}
+}
